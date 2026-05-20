@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>H446/01 Computer Systems Practice Site</title>
+<style>
+:root{
+  --green:#2f6f5e;
+  --green2:#e9f4ef;
+  --ink:#18202a;
+  --muted:#667085;
+  --line:#d7dde5;
+  --bg:#f5f7fa;
+  --card:#fff;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+}
+.yearTop{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 10px rgba(15,23,42,.06);
+}
+.yearInner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 18px;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.brand strong{font-size:18px}
+.brand span{font-size:13px;color:var(--muted)}
+.yearTabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.yearTabs button{
+  border:1px solid var(--green);
+  background:#fff;
+  color:var(--green);
+  border-radius:999px;
+  padding:9px 16px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:15px;
+}
+.yearTabs button.active{
+  background:var(--green);
+  color:#fff;
+}
+.hint{
+  background:var(--green2);
+  border-top:1px solid #d8ebe2;
+  padding:7px 18px;
+  font-size:13px;
+  color:#344054;
+}
+.frameWrap{
+  height:calc(100vh - 89px);
+  min-height:600px;
+}
+iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  background:#fff;
+  display:block;
+}
+@media (max-width:760px){
+  .yearInner{align-items:flex-start;flex-direction:column;padding:10px 12px}
+  .brand strong{font-size:16px}
+  .yearTabs button{padding:8px 12px;font-size:14px}
+  .hint{padding:7px 12px}
+  .frameWrap{height:calc(100vh - 132px);min-height:520px}
+}
+</style>
+</head>
+<body>
+  <header class="yearTop">
+    <div class="yearInner">
+      <div class="brand">
+        <strong>H446/01 Computer Systems Practice</strong>
+        <span>Choose the exam year, then use the paper questions inside the page.</span>
+      </div>
+      <nav class="yearTabs" aria-label="Exam year">
+        <button id="btn2025" class="active" onclick="loadYear('2025')">June 2025</button>
+        <button id="btn2024" onclick="loadYear('2024')">June 2024</button>
+        <button id="btn2023" onclick="loadYear('2023')">June 2023</button>
+        <button id="btn2022" onclick="loadYear('2022')">June 2022</button>
+        <button id="btn2021nov" onclick="loadYear('2021nov')">Nov 2021</button>
+        <button id="btn2020nov" onclick="loadYear('2020nov')">Nov 2020</button>
+        <button id="btn2019" onclick="loadYear('2019')">June 2019</button>
+      </nav>
+    </div>
+    <div class="hint" id="yearHint">Showing June 2025 practice site, including the Q7 RICE-style question.</div>
+  </header>
+
+  <main class="frameWrap">
+    <iframe id="paperFrame" src="papers/2025/index.html" title="June 2025 H446/01 practice site"></iframe>
+  </main>
+
+<script>
+const yearData = {
+  "2025": {
+    src: "papers/2025/index.html",
+    title: "June 2025 H446/01 practice site",
+    hint: "Showing June 2025 practice site, including the Q7 RICE-style question."
+  },
+  "2024": {
+    src: "papers/2024/index.html",
+    title: "June 2024 H446/01 practice site",
+    hint: "Showing June 2024 practice site, including the Q7 RICE-style database evaluation question."
+  },
+  "2023": {
+    src: "papers/2023/index.html",
+    title: "June 2023 H446/01 practice site",
+    hint: "Showing June 2023 practice site, including the Q7 RICE-style RIPA evaluation question."
+  },
+  "2022": {
+    src: "papers/2022/index.html",
+    title: "June 2022 H446/01 practice site",
+    hint: "Showing June 2022 practice site, including RICE-style CISC/RISC and lifecycle evaluation questions."
+  },
+  "2021nov": {
+    src: "papers/2021nov/index.html",
+    title: "November 2021 H446/01 practice site",
+    hint: "Showing November 2021 practice site, including RICE-style storage, Computer Misuse Act and addressing-mode evaluation questions."
+  },
+  "2020nov": {
+    src: "papers/2020nov/index.html",
+    title: "November 2020 H446/01 practice site",
+    hint: "Showing November 2020 practice site, including RICE-style network security, surveillance and OOP evaluation questions."
+  },
+  "2019": {
+    src: "papers/2019/index.html",
+    title: "June 2019 H446/01 practice site",
+    hint: "Showing June 2019 practice site, including RICE-style hash-table, environmental-impact and web-technologies evaluation questions."
+  }
+};
+function loadYear(year){
+  const data = yearData[year];
+  if(!data) return;
+  document.getElementById('paperFrame').src = data.src;
+  document.getElementById('paperFrame').title = data.title;
+  document.getElementById('yearHint').textContent = data.hint;
+  Object.keys(yearData).forEach(y=>{
+    const btn = document.getElementById('btn'+y);
+    if(btn) btn.classList.toggle('active', y===year);
+  });
+}
+</script>
+</body>
+</html>

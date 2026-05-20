@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>H446/01 November 2020 Automated Paper Practice</title>
+<style>
+:root{--green:#2f6f5e;--green2:#e9f4ef;--ink:#18202a;--muted:#667085;--line:#d7dde5;--bg:#f5f7fa;--card:#fff;--wrong:#ffe7e7;--right:#e9f8ef;--amber:#fff7dd;}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}.top{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:10px 18px}.top h1{font-size:20px;margin:0 0 8px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button,.smallBtn{border:1px solid var(--green);background:#fff;color:var(--green);border-radius:999px;padding:8px 12px;font-weight:700;cursor:pointer}.nav button.active,.smallBtn.active{background:var(--green);color:#fff}.layout{display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px}.side{position:sticky;top:86px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.side button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px;border-radius:12px;border:1px solid transparent;background:#f7f9fb;cursor:pointer}.side button.active{border-color:var(--green);background:var(--green2);font-weight:700}.main{min-width:0}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.card h2{font-size:18px;margin:0 0 8px}.badge{display:inline-block;background:var(--green2);color:var(--green);font-weight:700;border-radius:999px;padding:4px 9px;font-size:12px;margin-right:6px}.context{background:#f8fafc;border-left:5px solid var(--green);padding:10px;border-radius:10px;margin:8px 0}.choices{display:grid;gap:8px;margin:10px 0}.choice{border:1px solid var(--line);padding:10px;border-radius:12px;background:#fff;cursor:pointer}.choice.selected{border:2px solid var(--green);background:var(--green2);font-weight:700}.choice.correct{border-color:#159947;background:var(--right)}.choice.incorrect{border-color:#d92d20;background:var(--wrong)}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.check{background:var(--green);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}.reset{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 14px;cursor:pointer}.feedback{margin-top:10px;padding:10px;border-radius:12px;display:none}.feedback.show{display:block}.feedback.good{background:var(--right);border:1px solid #b7e4c7}.feedback.bad{background:var(--wrong);border:1px solid #ffb8b8}.explain{background:#f7f9fb;border-radius:14px;padding:12px;margin-top:10px}.fact{background:var(--amber);border-left:5px solid #eaaa08;border-radius:10px;padding:10px;margin-top:8px}.hidden{display:none!important}.summaryGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.pdfBox{padding:8px!important}.pdfBox .card{padding:8px;margin-bottom:0}.pdfBox iframe{width:100%;height:82vh;border:1px solid var(--line);border-radius:8px;background:white}.reviewItem{border-left:5px solid #d92d20;background:#fff;border-radius:12px;padding:12px;margin:10px 0}.questionGrid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:start}.work{background:#101827;color:#fff;border-radius:18px;padding:14px;white-space:pre-wrap;font-family:Consolas,Menlo,monospace;font-size:16px;line-height:1.65;overflow:auto}.blank{display:inline-block;min-width:105px;min-height:34px;padding:2px 8px;margin:0 3px;background:#fff;color:#111;border:2px dashed #9ca3af;border-radius:10px;vertical-align:middle}.blank.filled{border-style:solid;border-color:#8fb7a8;background:#effaf4}.tiles{position:sticky;top:112px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.tiles h3{margin:0 0 8px;font-size:15px}.tile{display:block;width:100%;text-align:center;margin:7px 0;padding:8px;border:2px solid #a8c7ba;border-radius:10px;background:#f8fffb;cursor:grab;font-weight:700}.tile.active{background:var(--green);color:#fff}.score{font-weight:800;color:var(--green)}@media(max-width:900px){.layout{grid-template-columns:1fr}.side,.tiles{position:static}.questionGrid{grid-template-columns:1fr}.top{position:static}.work{font-size:14px}}
+.pdfSplit{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pdfPane{min-width:0}.pdfPane h3{font-size:14px;margin:0 0 3px}.pdfToolbar{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}.pdfToolbar button{border:1px solid var(--green);background:#fff;color:var(--green);border-radius:999px;padding:7px 10px;font-weight:700;cursor:pointer}.pdfToolbar button.active{background:var(--green);color:#fff}.pdfBox .pdfSplit iframe{height:84vh}.sourceLink{margin:10px 0}.sourceLink .smallBtn{font-size:13px;padding:7px 10px;text-decoration:none;display:inline-block}@media(max-width:1100px){.pdfSplit{grid-template-columns:1fr}.pdfBox .pdfSplit iframe{height:72vh}}.pdfBox h2,.pdfBox .card>p{display:none}.pdfToolbar button{padding:5px 8px;font-size:12px}.pdfBox .card{border-radius:10px}.pdfPane h3{line-height:1.1}.pdfImageWrap{height:84vh;overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}.pdfPageImage{display:block;width:100%;height:auto;margin:0 auto}.pdfBox .pdfSplit iframe{display:none}</style></head><body>
+<div class="top"><h1>H446/01 November 2020 Automated Paper Practice</h1><div class="nav"><button class="topBtn active" data-view="practice">Practice</button><button class="topBtn" data-view="summary">Learning summary</button><button class="topBtn" data-view="review">Review mistakes</button><button class="topBtn" data-view="pdf">Source PDF</button><span class="badge" id="scoreBadge">Score: 0 / 0</span></div></div>
+<div class="layout" id="practiceView"><aside class="side" id="sectionNav"></aside><main class="main" id="questionHost"></main></div>
+<main class="main hidden" id="summaryView" style="padding:16px"><div class="card"><h2>Learning summary</h2><p>This page summarises the OCR H446 Paper 1 topics from the November 2020 paper. Use it before attempting the practice tasks.</p><div class="summaryGrid" id="summaryGrid"></div></div></main>
+<main class="main hidden" id="reviewView" style="padding:16px"><div class="card"><h2>Review mistakes</h2><p>Incorrect answers will appear here after you mark questions.</p><div id="reviewList"></div></div></main>
+<main class="main hidden pdfBox" id="pdfView" style="padding:16px"><div class="card"><h2>Source pages: question and mark scheme</h2><p>Use the buttons below to keep the exam question on the left and the matching mark scheme page on the right.</p><p><a href="pdfs/H44601_Computer_Systems_November_2020.pdf" target="_blank">Open full PDF in a new tab</a></p><div class="pdfToolbar" id="pdfFocusNav"></div><div class="pdfSplit"><div class="pdfPane"><h3 id="questionPdfTitle">Question paper</h3><div class="pdfImageWrap"><img id="questionPdfFrame" class="pdfPageImage" alt="Question paper page" src="pdf_pages/page_001.jpg"></div></div><div class="pdfPane"><h3 id="answerPdfTitle">Mark scheme answer</h3><div class="pdfImageWrap"><img id="answerPdfFrame" class="pdfPageImage" alt="Mark scheme page" src="pdf_pages/page_001.jpg"></div></div></div></div></main>
+<script>
+const QUESTIONS = [{"id": "q1_client_server", "section": "Q1", "title": "Q1(a) Client-server networks", "type": "mcq", "context": "A hotel uses a client-server network so staff can query a room-booking database.", "question": "What does client-server mean in this context?", "choices": ["Client computers request services or data from a central server", "Every computer has equal responsibility and no central server", "A switch stores all room bookings", "The database is stored only in RAM"], "answer": "Client computers request services or data from a central server", "explanation": "In a client-server model, client machines make requests and the server provides access to shared resources such as the hotel database.", "fact": "Client-server networks are often easier to manage, back up and secure than peer-to-peer networks."}, {"id": "q1_switch", "section": "Q1", "title": "Q1(b) Network switch", "type": "mcq", "context": "The hotel network uses multiple switches.", "question": "What is the main purpose of a switch?", "choices": ["To forward frames/packets to the correct device using address information", "To translate high-level code into machine code", "To encrypt every database field automatically", "To store the operating system bootstrap"], "answer": "To forward frames/packets to the correct device using address information", "explanation": "A switch connects devices on a LAN and forwards data out of the correct port using address information such as MAC addresses.", "fact": "A switch is more efficient than a hub because it does not simply broadcast every packet to every connected device."}, {"id": "q1_rice_security", "section": "Q1", "title": "Q1(c) RICE evaluation: hotel network security", "type": "drag", "context": "The hotel is concerned about threats to its computer network and how these threats could be reduced.", "prompt": "Build a RICE-style evaluation paragraph for the network-security question.", "lines": ["Risk: A hotel network could be affected by malware, phishing, spyware or [[l1]].", "Implication: If customer or booking data is stolen, the hotel may face financial loss and [[l2]].", "Consequence: Firewalls, staff training, updated software and restricted Wi-Fi access can [[l3]].", "Evaluation: The strongest answer balances security with the hotel need for reliable services and a good [[l4]]."], "answers": {"l1": "denial of service attacks", "l2": "data protection consequences", "l3": "reduce the likelihood of attacks", "l4": "customer experience"}, "tiles": ["denial of service attacks", "data protection consequences", "reduce the likelihood of attacks", "customer experience", "mantissa precision", "polymorphism", "foreign key"], "explanation": "RICE works well here because it links a named threat to a practical impact, then evaluates how realistic prevention is in a hotel setting.", "fact": "Threats include malware, spyware/keyloggers, phishing and denial-of-service attacks; controls include firewalls, staff education, software updates and access restrictions."}, {"id": "q1_database", "section": "Q1", "title": "Q1(d) Database design, keys and hashing", "type": "mcq", "context": "The hotel stores rooms, customers and bookings in a database.", "question": "Why would a Booking table usually contain foreign keys?", "choices": ["To link each booking to an existing customer and room", "To remove the need for a primary key", "To make all fields Boolean", "To store executable code inside the database"], "answer": "To link each booking to an existing customer and room", "explanation": "A foreign key stores the value of a primary key from another table, creating a relationship between records.", "fact": "Referential integrity means foreign keys must match valid primary keys, otherwise the relationship is broken."}, {"id": "q2_oop", "section": "Q2", "title": "Q2 OOP, constructors and encapsulation", "type": "mcq", "context": "A supermarket uses an ItemForSale class with itemName, price and discount attributes.", "question": "How could encapsulation stop discounts being set above 50?", "choices": ["Make discount private and only allow changes through a setter method that validates the value", "Make every attribute public", "Remove the constructor", "Store discount as HTML"], "answer": "Make discount private and only allow changes through a setter method that validates the value", "explanation": "Encapsulation protects data by controlling access to attributes through methods. A setter can reject discount values outside 0 to 50.", "fact": "Inheritance could create a delivery-only subclass with an extra stock-location attribute and a different maximum discount rule."}, {"id": "q3_numbers", "section": "Q3", "title": "Q3 Number systems and masks", "type": "mcq", "context": "The paper includes two’s complement, hexadecimal, floating point and bit masking.", "question": "Which operation would force the most significant bit of an 8-bit value to 1 while leaving other bits unchanged?", "choices": ["OR with 10000000", "AND with 10000000", "XOR with 11111111", "NOT with 00000000"], "answer": "OR with 10000000", "explanation": "OR with 1 forces a bit to 1. OR with 0 leaves the original bit unchanged, so 10000000 sets only the MSB.", "fact": "XOR masks toggle bits; OR masks can set bits; AND masks can clear or preserve selected bits."}, {"id": "q4_logic", "section": "Q4", "title": "Q4 Karnaugh maps and D-type flip-flops", "type": "mcq", "context": "The Boolean expression is (¬A ∧ ¬B) ∨ (A ∧ ¬B).", "question": "What is the simplified expression?", "choices": ["¬B", "A", "B", "¬A ∧ B"], "answer": "¬B", "explanation": "Both terms contain ¬B. The expression covers both A values, so A cancels out and the result is ¬B.", "fact": "A D-type flip-flop stores one bit and updates its output when the clock signal allows it."}, {"id": "q5_rice_surveillance", "section": "Q5", "title": "Q5 RICE evaluation: government surveillance", "type": "drag", "context": "The question asks whether “if you have nothing to hide, you have nothing to fear” is a fair view of government electronic surveillance.", "prompt": "Build a RICE-style evaluation paragraph for the surveillance question.", "lines": ["Risk: Government monitoring can help detect serious crime, but it may also expose [[l1]].", "Implication: Laws such as RIPA can require people to disclose encryption keys, so encrypted messages may not always remain [[l2]].", "Consequence: Citizens may use end-to-end encryption, VPNs or steganography to make monitoring [[l3]].", "Evaluation: A balanced answer should recognise public safety benefits while questioning routine monitoring and [[l4]]."], "answers": {"l1": "private but legal communications", "l2": "unreadable to authorities", "l3": "more difficult", "l4": "false positives"}, "tiles": ["private but legal communications", "unreadable to authorities", "more difficult", "false positives", "hash collision", "printer queue", "normalisation"], "explanation": "The key is not to be one-sided. Strong answers weigh public safety against privacy, misuse, false positives and the role of encryption.", "fact": "The mark scheme links this topic to encryption, keys, RIPA, VPNs, steganography and the social/legal impact of monitoring."}, {"id": "q6_algorithm", "section": "Q6", "title": "Q6 Pseudocode counting game", "type": "mcq", "context": "Two players take turns choosing one, two or three ascending numbers. The player who chooses 15 loses.", "question": "Which feature is essential in the algorithm?", "choices": ["Validate that the player chooses between 1 and 3 numbers", "Sort a binary search tree", "Use a SQL INNER JOIN", "Apply De Morgan’s law"], "answer": "Validate that the player chooses between 1 and 3 numbers", "explanation": "The question requires alternating players, validating the choice, displaying chosen numbers and identifying the winner when 15 is displayed.", "fact": "This is an algorithm-design question, so marks come from clear logic rather than a specific programming language."}, {"id": "q7_lmc", "section": "Q7", "title": "Q7 LMC instructions and comparison program", "type": "mcq", "context": "The paper asks for LMC mnemonics and a program to output the larger of two numbers continuously.", "question": "Which LMC command branches unconditionally?", "choices": ["BRA", "BRZ", "BRP", "STA"], "answer": "BRA", "explanation": "BRA means branch always. BRZ branches if the accumulator is zero and BRP branches if the accumulator is zero or positive.", "fact": "A typical comparison program inputs two values, stores one, subtracts to compare, branches, outputs the larger value, then loops."}, {"id": "q8_rice_oop", "section": "Q8", "title": "Q8 RICE evaluation: OOP for computer games", "type": "drag", "context": "The paper compares object-oriented programming with procedural programming for computer games.", "prompt": "Build a RICE-style paragraph about why OOP may be better for games.", "lines": ["Risk: Procedural code can become hard to manage when a game has many players, enemies and objects with [[l1]].", "Implication: OOP lets developers create classes, then instantiate many objects with their own [[l2]].", "Consequence: Inheritance and polymorphism can reduce repeated code and allow similar game objects to [[l3]].", "Evaluation: OOP is often suitable for complex games, although simple games may not need the extra [[l4]]."], "answers": {"l1": "different behaviours", "l2": "attribute values", "l3": "behave differently", "l4": "design complexity"}, "tiles": ["different behaviours", "attribute values", "behave differently", "design complexity", "two’s complement", "PageRank", "client-server"], "explanation": "A strong answer applies inheritance, encapsulation and polymorphism to game examples such as players, enemies, weapons or levels.", "fact": "OOP supports modular design, data protection through encapsulation, reuse through inheritance and flexibility through polymorphism."}, {"id": "q9_os", "section": "Q9", "title": "Q9 Operating systems, utilities and libraries", "type": "mcq", "context": "Imogen’s desktop computer has an operating system, device drivers, utilities, compiler, IDE and libraries.", "question": "What does a linker do during compilation?", "choices": ["Links the main program to required library code", "Allocates printer jobs using first come first served", "Turns a D-type flip-flop into a latch", "Indexes websites for a search engine"], "answer": "Links the main program to required library code", "explanation": "A linker connects the compiled main program with library routines, either by including them or by linking to external library files.", "fact": "Libraries save time because programmers can reuse tested routines instead of writing every function from scratch."}];
+const SUMMARY = [["Q1 Networks, security and databases", "Client-server networks, switches, network threats, ERDs, foreign keys, hashing and referential integrity."], ["Q2 Object-oriented programming", "Constructors, object creation, methods, encapsulation, validation and inheritance."], ["Q3 Data representation", "Two’s complement, hexadecimal, normalised floating point and bit masks."], ["Q4 Logic", "Karnaugh maps, simplification and D-type flip-flop behaviour."], ["Q5 Surveillance and encryption", "Government monitoring, RIPA, encryption keys, VPNs, steganography, privacy and public safety."], ["Q6 Algorithms", "Pseudocode design for a two-player counting game with validation and winner detection."], ["Q7 LMC", "Instruction set mnemonics and LMC program design for comparing two inputs."], ["Q8 Programming paradigms", "Object-oriented vs procedural programming for games, including inheritance, encapsulation and polymorphism."], ["Q9 Operating systems and translators", "Memory management, virtual memory, device drivers, utility software, open source, libraries and linkers."], ["RICE practice", "RICE = Risk, Implication, Consequence, Evaluation. Use it to build balanced paragraphs for long-answer questions."]];
+let currentSection='Q1'; let state={}; let mistakes={};
+const sections=[...new Set(QUESTIONS.map(q=>q.section))];
+
+const PDF_PATH = "pdfs/H44601_Computer_Systems_November_2020.pdf";
+const PDF_PAGE_MAP = {"Q1": {"question": 1, "answer": 25}, "Q2": {"question": 6, "answer": 28}, "Q3": {"question": 9, "answer": 29}, "Q4": {"question": 12, "answer": 30}, "Q5": {"question": 14, "answer": 31}, "Q6": {"question": 15, "answer": 32}, "Q7": {"question": 17, "answer": 33}, "Q8": {"question": 19, "answer": 34}, "Q9": {"question": 21, "answer": 36}};
+function pdfSrc(page){return 'pdf_pages/page_' + String(page).padStart(3,'0') + '.jpg';}
+function renderPdfFocusNav(){
+  const nav=document.getElementById('pdfFocusNav');
+  if(!nav) return;
+  nav.innerHTML='';
+  Object.keys(PDF_PAGE_MAP).forEach(section=>{
+    const b=el('button', section===currentSection?'active':'', section);
+    b.onclick=()=>{ currentSection=section; renderSectionNav(); renderQuestions(); setPdfFocus(section); };
+    nav.appendChild(b);
+  });
+}
+function setPdfFocus(section){
+  const info=PDF_PAGE_MAP[section] || PDF_PAGE_MAP[Object.keys(PDF_PAGE_MAP)[0]];
+  const q=document.getElementById('questionPdfFrame');
+  const a=document.getElementById('answerPdfFrame');
+  if(q) q.src=pdfSrc(info.question);
+  if(a) a.src=pdfSrc(info.answer);
+  const qt=document.getElementById('questionPdfTitle');
+  const at=document.getElementById('answerPdfTitle');
+  if(qt) qt.textContent='Question paper – '+section+' (page '+info.question+')';
+  if(at) at.textContent='Mark scheme – '+section+' answer (page '+info.answer+')';
+  renderPdfFocusNav();
+}
+function openPdfFocus(section){
+  currentSection=section;
+  document.querySelectorAll('.topBtn').forEach(b=>b.classList.remove('active'));
+  const pdfBtn=document.querySelector('.topBtn[data-view="pdf"]');
+  if(pdfBtn) pdfBtn.classList.add('active');
+  ['practice','summary','review','pdf'].forEach(v=>document.getElementById(v+'View').classList.add('hidden'));
+  document.getElementById('pdfView').classList.remove('hidden');
+  renderSectionNav(); renderQuestions(); setPdfFocus(section);
+}
+
+function el(tag,cls,text){const e=document.createElement(tag); if(cls)e.className=cls; if(text!==undefined)e.textContent=text; return e;}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function init(){renderSectionNav();renderQuestions();renderSummary();renderPdfFocusNav();setPdfFocus(currentSection);bindTop();updateScore();}
+function bindTop(){document.querySelectorAll('.topBtn').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.topBtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');['practice','summary','review','pdf'].forEach(v=>document.getElementById(v+'View').classList.add('hidden'));document.getElementById(btn.dataset.view+'View').classList.remove('hidden');if(btn.dataset.view==='review')renderReview(); if(btn.dataset.view==='pdf')setPdfFocus(currentSection);});}
+function renderSectionNav(){const nav=document.getElementById('sectionNav');nav.innerHTML='<strong>Exam question</strong>';sections.forEach(s=>{const b=el('button',s===currentSection?'active':'',s);b.onclick=()=>{currentSection=s;renderSectionNav();renderQuestions();setPdfFocus(s);};nav.appendChild(b);});}
+function renderQuestions(){const host=document.getElementById('questionHost');host.innerHTML='';QUESTIONS.filter(q=>q.section===currentSection).forEach(q=>host.appendChild(renderCard(q)));}
+function renderCard(q){const card=el('section','card');card.id=q.id;card.innerHTML=`<span class="badge">${q.section}</span><h2>${q.title}</h2><div class="context">${q.context}</div>`; if(q.type==='mcq') renderMCQ(card,q); else renderDrag(card,q); return card;}
+function renderMCQ(card,q){card.appendChild(el('p','',q.question));const choices=el('div','choices');const arr=state[q.id]?.order || shuffle(q.choices);state[q.id]={...(state[q.id]||{}),order:arr};arr.forEach(c=>{const div=el('div','choice',c); if(state[q.id].selected===c) div.classList.add('selected'); div.onclick=()=>{if(state[q.id].marked)return;state[q.id].selected=c;choices.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));div.classList.add('selected');};choices.appendChild(div);});card.appendChild(choices);const fb=el('div','feedback');const ctr=el('div','controls');const mark=el('button','check','Mark');mark.onclick=()=>{const selected=state[q.id].selected;if(!selected){alert('Choose an answer first.');return;}state[q.id].marked=true;const good=selected===q.answer;choices.querySelectorAll('.choice').forEach(ch=>{if(ch.textContent===q.answer)ch.classList.add('correct'); if(ch.textContent===selected && !good)ch.classList.add('incorrect');});fb.className='feedback show '+(good?'good':'bad');fb.innerHTML=(good?'Correct.':'Not quite.')+'<div class="explain">'+q.explanation+'</div><div class="fact">'+q.fact+'</div>'; if(!good)mistakes[q.id]={title:q.title,chosen:selected,answer:q.answer,explanation:q.explanation,fact:q.fact}; else delete mistakes[q.id];updateScore();};const reset=el('button','reset','Reset');reset.onclick=()=>{delete state[q.id];delete mistakes[q.id];renderQuestions();updateScore();};ctr.append(mark,reset);card.append(ctr,fb);}
+function renderDrag(card,q){const grid=el('div','questionGrid');const left=el('div');const work=el('div','work');work.innerHTML=q.lines.map(line=>line.replace(/\[\[(.*?)\]\]/g,(m,id)=>`<span class="blank" data-blank="${id}">${state[q.id]?.filled?.[id]||''}</span>`)).join('\n');left.append(el('p','',q.prompt));left.append(work);const tiles=el('div','tiles');tiles.innerHTML='<h3>Answer tiles</h3><p style="font-size:13px;color:#667085;margin-top:0">Drag a tile or tap a tile then tap a blank.</p>';let selectedTile=null;const tileOrder=state[q.id]?.tileOrder||shuffle(q.tiles);state[q.id]={...(state[q.id]||{}),tileOrder};tileOrder.forEach(t=>{const tile=el('button','tile',t);tile.draggable=true;tile.ondragstart=e=>e.dataTransfer.setData('text/plain',t);tile.onclick=()=>{selectedTile=t;tiles.querySelectorAll('.tile').forEach(x=>x.classList.remove('active'));tile.classList.add('active');};tiles.appendChild(tile);});grid.append(left,tiles);card.appendChild(grid);work.querySelectorAll('.blank').forEach(blank=>{blank.ondragover=e=>e.preventDefault();blank.ondrop=e=>{e.preventDefault();fillBlank(q,blank,e.dataTransfer.getData('text/plain'));};blank.onclick=()=>{if(selectedTile)fillBlank(q,blank,selectedTile);};});const fb=el('div','feedback');const ctr=el('div','controls');const mark=el('button','check','Mark');mark.onclick=()=>{const filled=state[q.id]?.filled||{};let all=true;Object.entries(q.answers).forEach(([id,ans])=>{if(filled[id]!==ans)all=false;});fb.className='feedback show '+(all?'good':'bad');fb.innerHTML=(all?'Correct.':'Check the highlighted blanks and compare with the worked explanation.')+'<div class="explain">'+q.explanation+'</div><div class="fact">'+q.fact+'</div>'; if(!all){mistakes[q.id]={title:q.title,chosen:Object.entries(filled).map(([k,v])=>k+': '+v).join('; ')||'No answer',answer:Object.entries(q.answers).map(([k,v])=>k+': '+v).join('; '),explanation:q.explanation,fact:q.fact};} else delete mistakes[q.id];state[q.id]={...(state[q.id]||{}),marked:true,correct:all};updateScore();};const reset=el('button','reset','Reset');reset.onclick=()=>{delete state[q.id];delete mistakes[q.id];renderQuestions();updateScore();};ctr.append(mark,reset);card.append(ctr,fb);}
+function fillBlank(q,blank,value){state[q.id]=state[q.id]||{};state[q.id].filled=state[q.id].filled||{};state[q.id].filled[blank.dataset.blank]=value;blank.textContent=value;blank.classList.add('filled');}
+function updateScore(){let attempted=0,correct=0;QUESTIONS.forEach(q=>{if(state[q.id]?.marked){attempted++; if(q.type==='mcq'&&state[q.id].selected===q.answer)correct++; if(q.type==='drag'&&state[q.id].correct)correct++;}});document.getElementById('scoreBadge').textContent=`Score: ${correct} / ${attempted}`;}
+function renderSummary(){const host=document.getElementById('summaryGrid');host.innerHTML='';SUMMARY.forEach(([h,t])=>{const c=el('div','card');c.style.margin='0';c.innerHTML=`<h2>${h}</h2><p>${t}</p>`;host.appendChild(c);});}
+function renderReview(){const list=document.getElementById('reviewList');const vals=Object.values(mistakes);if(!vals.length){list.innerHTML='<p class="score">No mistakes recorded yet.</p>';return;}list.innerHTML='';vals.forEach(m=>{const d=el('div','reviewItem');d.innerHTML=`<h3>${m.title}</h3><p><strong>Your answer:</strong> ${m.chosen}</p><p><strong>Correct answer:</strong> ${m.answer}</p><div class="explain">${m.explanation}</div><div class="fact">${m.fact}</div>`;list.appendChild(d);});}
+init();
+</script>
+<script id="rice-paragraph-extension">
+(function(){
+  const RICE_TASKS = [{"id": "rice_2020_q1_security", "section": "Q1", "title": "Q1(c) RICE paragraph: hotel network security", "type": "drag", "context": "The hotel is concerned about threats to its computer network. Build one strong RICE paragraph by matching each part to the correct role.", "prompt": "Drag each sentence into the correct RICE position.", "lines": ["Risk: [[risk]]", "Implication: [[implication]]", "Consequence: [[consequence]]", "Evaluation: [[evaluation]]"], "answers": {"risk": "The hotel network could be affected by malware, phishing, spyware or denial-of-service attacks.", "implication": "Attackers could steal customer data or stop staff from accessing booking systems.", "consequence": "This may cause financial loss, GDPR issues and damage to the hotel’s reputation.", "evaluation": "Firewalls, staff training, access control, updates and anti-malware reduce risk but must be balanced with usability."}, "tiles": ["The hotel network could be affected by malware, phishing, spyware or denial-of-service attacks.", "Attackers could steal customer data or stop staff from accessing booking systems.", "This may cause financial loss, GDPR issues and damage to the hotel’s reputation.", "Firewalls, staff training, access control, updates and anti-malware reduce risk but must be balanced with usability.", "A Boolean mask creates a constructor.", "OOP cannot reuse code."], "explanation": "RICE helps structure evaluation: identify a Risk or issue, explain the Implication, develop the Consequence, then make an Evaluation or judgement linked to the scenario.", "fact": "Exam tip: the Evaluation should not simply repeat the risk. It should weigh up the issue and make a justified judgement."}, {"id": "rice_2020_q5_surveillance", "section": "Q5", "title": "Q5 RICE paragraph: government surveillance", "type": "drag", "context": "The question asks whether people with nothing to hide have nothing to fear. Build one strong RICE paragraph by matching each part to the correct role.", "prompt": "Drag each sentence into the correct RICE position.", "lines": ["Risk: [[risk]]", "Implication: [[implication]]", "Consequence: [[consequence]]", "Evaluation: [[evaluation]]"], "answers": {"risk": "Government surveillance can monitor electronic communications and may reveal private but legal information.", "implication": "Citizens may feel their privacy and freedom of expression are reduced.", "consequence": "Trust in public bodies could fall if monitoring is seen as excessive or unjustified.", "evaluation": "Surveillance can help prevent serious crime, but it should require legal authority, oversight and proportionate use."}, "tiles": ["Government surveillance can monitor electronic communications and may reveal private but legal information.", "Citizens may feel their privacy and freedom of expression are reduced.", "Trust in public bodies could fall if monitoring is seen as excessive or unjustified.", "Surveillance can help prevent serious crime, but it should require legal authority, oversight and proportionate use.", "A full adder stores one web page.", "A switch assigns all HTML tags."], "explanation": "RICE helps structure evaluation: identify a Risk or issue, explain the Implication, develop the Consequence, then make an Evaluation or judgement linked to the scenario.", "fact": "Exam tip: the Evaluation should not simply repeat the risk. It should weigh up the issue and make a justified judgement."}, {"id": "rice_2020_q8_oop", "section": "Q8", "title": "Q8 RICE paragraph: OOP for computer games", "type": "drag", "context": "The question asks about using OOP rather than procedural programming for games. Build one strong RICE paragraph by matching each part to the correct role.", "prompt": "Drag each sentence into the correct RICE position.", "lines": ["Risk: [[risk]]", "Implication: [[implication]]", "Consequence: [[consequence]]", "Evaluation: [[evaluation]]"], "answers": {"risk": "A large game written procedurally may become difficult to manage as more characters and behaviours are added.", "implication": "Repeated code can make development slower and increase the chance of inconsistent behaviour.", "consequence": "Adding new enemies, players or items may introduce bugs and make maintenance harder.", "evaluation": "OOP is suitable because inheritance, encapsulation and polymorphism help model game objects and reuse code."}, "tiles": ["A large game written procedurally may become difficult to manage as more characters and behaviours are added.", "Repeated code can make development slower and increase the chance of inconsistent behaviour.", "Adding new enemies, players or items may introduce bugs and make maintenance harder.", "OOP is suitable because inheritance, encapsulation and polymorphism help model game objects and reuse code.", "Magnetic tape is best for instant random access.", "A server is a CSS selector."], "explanation": "RICE helps structure evaluation: identify a Risk or issue, explain the Implication, develop the Consequence, then make an Evaluation or judgement linked to the scenario.", "fact": "Exam tip: the Evaluation should not simply repeat the risk. It should weigh up the issue and make a justified judgement."}];
+  const RICE_SUMMARY = [["RICE paragraph builders", "Use the new Q1, Q5 and Q8 paragraph builders to practise security, surveillance and OOP evaluation."]];
+  RICE_TASKS.forEach(function(q){ if(!QUESTIONS.some(function(existing){return existing.id === q.id;})){ QUESTIONS.push(q); } });
+  RICE_SUMMARY.forEach(function(item){ if(!SUMMARY.some(function(existing){return existing[0] === item[0];})){ SUMMARY.push(item); } });
+  if (typeof renderSectionNav === 'function') renderSectionNav();
+  if (typeof renderQuestions === 'function') renderQuestions();
+  if (typeof renderSummary === 'function') renderSummary();
+  if (typeof updateScore === 'function') updateScore();
+})();
+</script>
+
+<script id="coding-drag-extension">
+(function(){
+  const CODING_TASKS = [{"id": "code_2020nov_q2_constructor", "section": "Q2", "title": "Q2(a) Code builder: ItemForSale constructor", "type": "drag", "context": "ItemForSale context: each supermarket item has itemName, price and discount. The constructor receives the item name and price, stores them, and sets discount to 0 for every new item.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["public procedure new([[a]], [[b]])", "  itemName = [[a]]", "  price = [[b]]", "  discount = [[c]]", "endprocedure"], "answers": {"a": "newName", "b": "newPrice", "c": "0"}, "tiles": ["newName", "newPrice", "0", "50", "return", "private"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "Use parameter names that are distinct from the attributes, then assign the initial discount to 0."}, {"id": "code_2020nov_q2_object", "section": "Q2", "title": "Q2(a)(ii) Code builder: create an object", "type": "drag", "context": "Object creation context: create an ItemForSale object called mushypeas. Its name should be \"mushy peas\" and its price should be 0.89.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["[[a]] = new [[b]]([[c]], [[d]])"], "answers": {"a": "mushypeas", "b": "ItemForSale", "c": "\"mushy peas\"", "d": "0.89"}, "tiles": ["mushypeas", "ItemForSale", "\"mushy peas\"", "0.89", "discount", "class"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "The object identifier, class name and constructor arguments must all match the scenario."}, {"id": "code_2020nov_q6_game", "section": "Q6", "title": "Q6 Code builder: counting game algorithm", "type": "drag", "context": "Counting game context: two players alternate turns. On each turn the player chooses 1, 2 or 3 numbers. The numbers count upward from 1. The player who says 15 loses, so the other player wins.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["current = 1", "player = 1", "while current <= 15", "  amount = input(\"How many numbers?\")", "  while amount < 1 or amount > 3", "    amount = [[a]]", "  endwhile", "  for i = 1 to amount", "    print([[b]])", "    current = current + 1", "  next i", "  if current > 15 then print([[c]])", "  player = [[d]]", "endwhile"], "answers": {"a": "input(\"How many numbers?\")", "b": "current", "c": "\"Other player wins\"", "d": "3 - player"}, "tiles": ["input(\"How many numbers?\")", "current", "\"Other player wins\"", "3 - player", "15", "player + 1"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "3 - player toggles between player 1 and player 2."}, {"id": "code_2020nov_q7_lmc_larger", "section": "Q7", "title": "Q7(b) Code builder: LMC larger number loop", "type": "drag", "context": "LMC context: repeatedly input two numbers, store at least one, subtract to compare them, branch depending on which is larger, output the larger value, then branch back to the start.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["start INP", "STA x", "INP", "STA y", "SUB x", "BRP [[a]]", "LDA [[b]]", "OUT", "BRA start", "first LDA [[c]]", "OUT", "BRA [[d]]"], "answers": {"a": "first", "b": "x", "c": "y", "d": "start"}, "tiles": ["first", "x", "y", "start", "HLT", "ADD x"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "After subtracting x from y, BRP means y is greater than or equal to x, so output y."}];
+  const CODING_SUMMARY = [["Coding drag-and-drop builders", "Coding-style exam questions now have scenario-based drag-and-drop practice tasks for pseudocode, SQL, HTML/CSS, LMC and class definitions where relevant."]];
+  CODING_TASKS.forEach(function(q){ if(!QUESTIONS.some(function(existing){return existing.id === q.id;})){ QUESTIONS.push(q); } });
+  CODING_SUMMARY.forEach(function(item){ if(!SUMMARY.some(function(existing){return existing[0] === item[0];})){ SUMMARY.push(item); } });
+  if (typeof renderSectionNav === 'function') renderSectionNav();
+  if (typeof renderQuestions === 'function') renderQuestions();
+  if (typeof renderSummary === 'function') renderSummary();
+  if (typeof updateScore === 'function') updateScore();
+})();
+</script>
+
+
+<script id="teacher-submit-extension">
+(function(){
+  const PAPER_LABEL = "November 2020";
+  if(!document.getElementById('teacher-submit-style')){
+    const style = document.createElement('style');
+    style.id = 'teacher-submit-style';
+    style.textContent = `
+      .side{display:flex;flex-direction:column;max-height:calc(100vh - 104px);overflow-y:auto;padding-bottom:12px}
+      .submitPanel{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;background:#fff;position:sticky;bottom:0;z-index:5}
+      .submitPanel .copyResultsBtn{width:100%;border:0;border-radius:12px;background:var(--green);color:white;padding:11px 12px;font-weight:800;cursor:pointer;text-align:center;box-shadow:0 -2px 8px rgba(15,23,42,.04)}
+      .submitPanel .submitHelp{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.35}
+      .submitPanel .submitError{display:none;margin-top:8px;padding:8px;border-radius:10px;background:#fff1f1;border:1px solid #ffc9c9;color:#9f1239;font-size:12px}
+      .resultsModalOverlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9999;display:none;align-items:center;justify-content:center;padding:18px}
+      .resultsModal{width:min(860px,96vw);max-height:92vh;background:#fff;border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.28);padding:18px;display:flex;flex-direction:column;gap:10px}
+      .resultsModal h2{margin:0;font-size:20px;color:var(--ink)}
+      .resultsModal p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+      .resultsModal textarea{width:100%;min-height:390px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;line-height:1.45;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;white-space:pre-wrap}
+      .resultsModalActions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+      .resultsModalActions button{border:0;border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer}
+      .resultsModalActions .primary{background:var(--green);color:#fff}
+      .resultsModalActions .secondary{background:#eef2f6;color:#344054}
+      .resultsModal .copyStatus{display:none;padding:8px;border-radius:10px;background:#ecfdf3;border:1px solid #abefc6;color:#067647;font-size:12px;line-height:1.35}
+      @media(max-width:900px){.side{display:block;max-height:none;overflow:visible}.submitPanel{position:static;margin-top:12px}}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function getScoreSummary(){
+    let attempted=0, correct=0;
+    const rows=[];
+    const questionList = (typeof QUESTIONS !== 'undefined') ? QUESTIONS : (window.QUESTIONS || []);
+    const answerState = (typeof state !== 'undefined') ? state : (window.state || {});
+    questionList.forEach(q=>{
+      const s=answerState[q.id];
+      if(s && s.marked){
+        attempted++;
+        let ok=false;
+        let chosen='';
+        let answer='';
+        if(q.type==='mcq'){
+          ok=s.selected===q.answer;
+          chosen=s.selected || 'No answer';
+          answer=q.answer || '';
+        }else if(q.type==='drag'){
+          ok=!!s.correct;
+          const filled=s.filled||{};
+          chosen=Object.entries(filled).map(([k,v])=>`${k}: ${v}`).join('; ') || 'No answer';
+          answer=Object.entries(q.answers||{}).map(([k,v])=>`${k}: ${v}`).join('; ');
+        }
+        if(ok) correct++;
+        rows.push(`${ok ? '✓' : '✗'} ${q.section || ''} - ${q.title}\nStudent answer: ${chosen}\nCorrect answer: ${answer}`);
+      }
+    });
+    return {attempted, correct, rows};
+  }
+
+  function buildResultsText(score){
+    const percent = score.attempted ? Math.round((score.correct / score.attempted) * 100) : 0;
+    return [
+      'H446/01 practice results',
+      `Paper: ${PAPER_LABEL}`,
+      `Score: ${score.correct} / ${score.attempted} (${percent}%)`,
+      `Generated: ${new Date().toLocaleString('en-GB')}`,
+      '',
+      'Marked question detail:',
+      score.rows.join('\n\n')
+    ].join('\n');
+  }
+
+  function showError(msg){
+    const err=document.getElementById('submitError');
+    if(err){err.textContent=msg;err.style.display='block';}
+  }
+  function clearError(){
+    const err=document.getElementById('submitError');
+    if(err){err.textContent='';err.style.display='none';}
+  }
+
+  function ensureResultsModal(){
+    let overlay=document.getElementById('resultsModalOverlay');
+    if(overlay) return overlay;
+    overlay=document.createElement('div');
+    overlay.className='resultsModalOverlay';
+    overlay.id='resultsModalOverlay';
+    overlay.innerHTML=`
+      <div class="resultsModal" role="dialog" aria-modal="true" aria-labelledby="resultsModalTitle">
+        <h2 id="resultsModalTitle">Submit results</h2>
+        <p>The results are selected below. Copy them, then paste into an email to your teacher.</p>
+        <textarea id="resultsCopyText" readonly aria-label="Results to copy"></textarea>
+        <div class="copyStatus" id="modalCopyStatus">Copied. Paste this into your email.</div>
+        <div class="resultsModalActions">
+          <button class="secondary" type="button" onclick="closeResultsPopup()">Close</button>
+          <button class="primary" type="button" onclick="copyResultsTextFromPopup()">Copy text</button>
+        </div>
+      </div>
+    `;
+    overlay.addEventListener('click', function(e){ if(e.target===overlay) closeResultsPopup(); });
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  window.closeResultsPopup=function(){
+    const overlay=document.getElementById('resultsModalOverlay');
+    if(overlay) overlay.style.display='none';
+  };
+
+  window.copyResultsTextFromPopup=async function(){
+    const ta=document.getElementById('resultsCopyText');
+    const status=document.getElementById('modalCopyStatus');
+    if(!ta) return;
+    ta.focus();
+    ta.select();
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(ta.value);
+      }else{
+        document.execCommand('copy');
+      }
+      if(status){status.textContent='Copied. Paste this into your email.';status.style.display='block';}
+    }catch(e){
+      if(status){status.textContent='If copying was blocked, press Ctrl+C or Cmd+C now.';status.style.display='block';}
+    }
+  };
+
+  window.showCopyResultsPopup = async function(){
+    clearError();
+    const score=getScoreSummary();
+    if(score.attempted===0){ showError('Mark at least one question before submitting.'); return; }
+    const text=buildResultsText(score);
+    const overlay=ensureResultsModal();
+    const ta=document.getElementById('resultsCopyText');
+    const status=document.getElementById('modalCopyStatus');
+    if(status) status.style.display='none';
+    if(ta){
+      ta.value=text;
+      overlay.style.display='flex';
+      setTimeout(()=>{ ta.focus(); ta.select(); }, 50);
+    }
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(text);
+        if(status){status.textContent='Copied. Paste this into your email.';status.style.display='block';}
+      }
+    }catch(e){
+      // Popup remains visible for manual copy.
+    }
+  };
+
+  function addSubmitPanel(){
+    const nav=document.getElementById('sectionNav');
+    if(!nav || document.getElementById('submitPanel')) return;
+    const panel=document.createElement('div');
+    panel.className='submitPanel';
+    panel.id='submitPanel';
+    panel.innerHTML=`
+      <button class="copyResultsBtn" type="button" onclick="showCopyResultsPopup()">Submit</button>
+      <div class="submitHelp">Mark questions first. Then copy the pop-up text into your email.</div>
+      <div class="submitError" id="submitError"></div>
+    `;
+    nav.appendChild(panel);
+  }
+
+  const originalRender = window.renderSectionNav;
+  if(typeof originalRender === 'function' && !originalRender.__copyResultsWrapped){
+    const wrapped=function(){ originalRender.apply(this, arguments); addSubmitPanel(); };
+    wrapped.__copyResultsWrapped=true;
+    window.renderSectionNav=wrapped;
+  }
+  addSubmitPanel();
+})();
+</script>
+
+</body></html>

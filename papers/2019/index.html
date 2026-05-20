@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>H446/01 June 2019 Automated Paper Practice</title>
+<style>
+:root{--green:#2f6f5e;--green2:#e9f4ef;--ink:#18202a;--muted:#667085;--line:#d7dde5;--bg:#f5f7fa;--card:#fff;--wrong:#ffe7e7;--right:#e9f8ef;--amber:#fff7dd;}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}.top{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:10px 18px}.top h1{font-size:20px;margin:0 0 8px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button,.smallBtn{border:1px solid var(--green);background:#fff;color:var(--green);border-radius:999px;padding:8px 12px;font-weight:700;cursor:pointer}.nav button.active,.smallBtn.active{background:var(--green);color:#fff}.layout{display:grid;grid-template-columns:220px 1fr;gap:16px;padding:16px}.side{position:sticky;top:86px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.side button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px;border-radius:12px;border:1px solid transparent;background:#f7f9fb;cursor:pointer}.side button.active{border-color:var(--green);background:var(--green2);font-weight:700}.main{min-width:0}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}.card h2{font-size:18px;margin:0 0 8px}.badge{display:inline-block;background:var(--green2);color:var(--green);font-weight:700;border-radius:999px;padding:4px 9px;font-size:12px;margin-right:6px}.context{background:#f8fafc;border-left:5px solid var(--green);padding:10px;border-radius:10px;margin:8px 0}.choices{display:grid;gap:8px;margin:10px 0}.choice{border:1px solid var(--line);padding:10px;border-radius:12px;background:#fff;cursor:pointer}.choice.selected{border:2px solid var(--green);background:var(--green2);font-weight:700}.choice.correct{border-color:#159947;background:var(--right)}.choice.incorrect{border-color:#d92d20;background:var(--wrong)}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.check{background:var(--green);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}.reset{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 14px;cursor:pointer}.feedback{margin-top:10px;padding:10px;border-radius:12px;display:none}.feedback.show{display:block}.feedback.good{background:var(--right);border:1px solid #b7e4c7}.feedback.bad{background:var(--wrong);border:1px solid #ffb8b8}.explain{background:#f7f9fb;border-radius:14px;padding:12px;margin-top:10px}.fact{background:var(--amber);border-left:5px solid #eaaa08;border-radius:10px;padding:10px;margin-top:8px}.hidden{display:none!important}.summaryGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.pdfBox{padding:8px!important}.pdfBox .card{padding:8px;margin-bottom:0}.pdfBox iframe{width:100%;height:82vh;border:1px solid var(--line);border-radius:8px;background:white}.reviewItem{border-left:5px solid #d92d20;background:#fff;border-radius:12px;padding:12px;margin:10px 0}.questionGrid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:start}.work{background:#101827;color:#fff;border-radius:18px;padding:14px;white-space:pre-wrap;font-family:Consolas,Menlo,monospace;font-size:16px;line-height:1.65;overflow:auto}.blank{display:inline-block;min-width:105px;min-height:34px;padding:2px 8px;margin:0 3px;background:#fff;color:#111;border:2px dashed #9ca3af;border-radius:10px;vertical-align:middle}.blank.filled{border-style:solid;border-color:#8fb7a8;background:#effaf4}.tiles{position:sticky;top:112px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.tiles h3{margin:0 0 8px;font-size:15px}.tile{display:block;width:100%;text-align:center;margin:7px 0;padding:8px;border:2px solid #a8c7ba;border-radius:10px;background:#f8fffb;cursor:grab;font-weight:700}.tile.active{background:var(--green);color:#fff}.score{font-weight:800;color:var(--green)}@media(max-width:900px){.layout{grid-template-columns:1fr}.side,.tiles{position:static}.questionGrid{grid-template-columns:1fr}.top{position:static}.work{font-size:14px}}
+.pdfSplit{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pdfPane{min-width:0}.pdfPane h3{font-size:14px;margin:0 0 3px}.pdfToolbar{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}.pdfToolbar button{border:1px solid var(--green);background:#fff;color:var(--green);border-radius:999px;padding:7px 10px;font-weight:700;cursor:pointer}.pdfToolbar button.active{background:var(--green);color:#fff}.pdfBox .pdfSplit iframe{height:84vh}.sourceLink{margin:10px 0}.sourceLink .smallBtn{font-size:13px;padding:7px 10px;text-decoration:none;display:inline-block}@media(max-width:1100px){.pdfSplit{grid-template-columns:1fr}.pdfBox .pdfSplit iframe{height:72vh}}.pdfBox h2,.pdfBox .card>p{display:none}.pdfToolbar button{padding:5px 8px;font-size:12px}.pdfBox .card{border-radius:10px}.pdfPane h3{line-height:1.1}.pdfImageWrap{height:84vh;overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}.pdfPageImage{display:block;width:100%;height:auto;margin:0 auto}.pdfBox .pdfSplit iframe{display:none}</style></head><body>
+<div class="top"><h1>H446/01 June 2019 Automated Paper Practice</h1><div class="nav"><button class="topBtn active" data-view="practice">Practice</button><button class="topBtn" data-view="summary">Learning summary</button><button class="topBtn" data-view="review">Review mistakes</button><button class="topBtn" data-view="pdf">Source PDF</button><span class="badge" id="scoreBadge">Score: 0 / 0</span></div></div>
+<div class="layout" id="practiceView"><aside class="side" id="sectionNav"></aside><main class="main" id="questionHost"></main></div>
+<main class="main hidden" id="summaryView" style="padding:16px"><div class="card"><h2>Learning summary</h2><p>This page summarises the OCR H446 Paper 1 topics from the June 2019 paper. Use it before attempting the practice tasks.</p><div class="summaryGrid" id="summaryGrid"></div></div></main>
+<main class="main hidden" id="reviewView" style="padding:16px"><div class="card"><h2>Review mistakes</h2><p>Incorrect answers will appear here after you mark questions.</p><div id="reviewList"></div></div></main>
+<main class="main hidden pdfBox" id="pdfView" style="padding:16px"><div class="card"><h2>Source pages: question and mark scheme</h2><p>Use the buttons below to keep the exam question on the left and the matching mark scheme page on the right.</p><p><a href="pdfs/H44601_Computer_Systems_June_2019.pdf" target="_blank">Open full PDF in a new tab</a></p><div class="pdfToolbar" id="pdfFocusNav"></div><div class="pdfSplit"><div class="pdfPane"><h3 id="questionPdfTitle">Question paper</h3><div class="pdfImageWrap"><img id="questionPdfFrame" class="pdfPageImage" alt="Question paper page" src="pdf_pages/page_001.jpg"></div></div><div class="pdfPane"><h3 id="answerPdfTitle">Mark scheme answer</h3><div class="pdfImageWrap"><img id="answerPdfFrame" class="pdfPageImage" alt="Mark scheme page" src="pdf_pages/page_001.jpg"></div></div></div></div></main>
+<script>
+const QUESTIONS = [{"id": "q1_assistant", "section": "Q1", "title": "Q1 Bertie Butler: embedded systems and logic", "type": "mcq", "context": "An in-home virtual assistant listens for the phrase ‘Hey Bertie’ and has built-in input and output devices.", "question": "Which pair best matches the likely input and output devices?", "choices": ["Microphone for speech input and speaker for spoken responses", "Keyboard for speech input and scanner for spoken responses", "Projector for input and mouse for output", "ROM for input and RAM for output"], "answer": "Microphone for speech input and speaker for spoken responses", "explanation": "A virtual assistant needs a microphone to detect speech and a speaker to output spoken answers.", "fact": "An embedded operating system is built into a device and is designed for a specific purpose or hardware."}, {"id": "q1_logic", "section": "Q1", "title": "Q1(c) Privacy button logic", "type": "mcq", "context": "Bertie Butler listens only if the privacy button P is off and the microphone signal S is true.", "question": "Which Boolean expression represents the listening output L?", "choices": ["¬P ∧ S", "P ∧ S", "¬P ∨ S", "P ∨ ¬S"], "answer": "¬P ∧ S", "explanation": "The device listens only when P is false and S is true, so P must be NOTed and then ANDed with S.", "fact": "This needs a NOT gate on P followed by an AND gate with S."}, {"id": "q2_rle", "section": "Q2", "title": "Q2 Compression and run length encoding", "type": "mcq", "context": "Vehicle survey data is compressed using Run Length Encoding.", "question": "What is the compressed form of CCCCOLLLCCCCCMOCCCCC?", "choices": ["4C1O3L5C1M1O5C", "3C1O3L4C1M1O5C", "4C3L5C1M5C", "CCCCOLLLCCCCCMOCCCCC"], "answer": "4C1O3L5C1M1O5C", "explanation": "Run Length Encoding stores a count followed by the repeated character. Single characters may be shown with a 1.", "fact": "RLE is most effective when there are long repeated runs of the same symbol."}, {"id": "q3_lmc", "section": "Q3", "title": "Q3 LMC and registers", "type": "mcq", "context": "An LMC program repeatedly adds a number to a total and outputs the square of the input.", "question": "What does the program output when the input is 3?", "choices": ["9", "6", "3", "12"], "answer": "9", "explanation": "The program adds 3 a total of 3 times, so it outputs 9.", "fact": "The program effectively multiplies the input by itself, so it squares the number."}, {"id": "q4_streaming", "section": "Q4", "title": "Q4 Optical media and streaming", "type": "mcq", "context": "Films can be distributed physically using optical media or accessed through streaming/download services.", "question": "Why is compression important for streaming high-resolution films?", "choices": ["It reduces the amount of data that must be transmitted, reducing buffering", "It makes the CPU use direct addressing", "It removes the need for an operating system", "It guarantees copyright protection"], "answer": "It reduces the amount of data that must be transmitted, reducing buffering", "explanation": "High-resolution video contains lots of data. Compression reduces bandwidth needs and helps the next chunk arrive in time.", "fact": "Without enough data arriving quickly enough, streaming can pause or buffer."}, {"id": "q5_hash_rice", "section": "Q5", "title": "Q5 RICE evaluation: hash table vs linked list", "type": "drag", "context": "A firewall stores acceptable website addresses in a whitelist and checks several addresses per second.", "prompt": "Build a RICE-style paragraph comparing a hash table with a linked list for this whitelist.", "lines": ["Risk: A linked list may become slower to search as the whitelist [[l1]].", "Implication: The firewall must check several website addresses per second, so slow searching could delay or disrupt [[l2]].", "Consequence: A hash table with a good hash function gives near [[l3]] access for checking addresses.", "Evaluation: Because additions are only about ten per day but searches are frequent, a [[l4]] is usually the stronger choice."], "answers": {"l1": "grows larger", "l2": "web access", "l3": "constant-time", "l4": "hash table"}, "tiles": ["grows larger", "web access", "constant-time", "hash table", "Unicode", "optical media", "syntax analysis"], "explanation": "This question is about suitability. The whitelist is searched many times per second, so fast lookup matters more than the small number of daily additions.", "fact": "A linked list is searched by following pointers. A hash table hashes the key to find the likely storage location directly."}, {"id": "q6_xp_vm", "section": "Q6", "title": "Q6 Anti-virus development, XP and virtual machines", "type": "mcq", "context": "Anti-virus programmers use Extreme Programming and virtual machines when developing updates.", "question": "Why are virtual machines useful when testing anti-virus updates?", "choices": ["They can test viruses safely and reset the VM afterwards", "They permanently overwrite the BIOS", "They remove the need for any testing", "They make FCFS scheduling run all processes at once"], "answer": "They can test viruses safely and reset the VM afterwards", "explanation": "A VM can be isolated from the host machine, allowing dangerous malware tests without risking the physical computer.", "fact": "VMs can also help test software across different operating-system environments without needing many physical machines."}, {"id": "q7_acid", "section": "Q7", "title": "Q7 Databases, referential integrity and ACID", "type": "mcq", "context": "RestaurantReview stores users, restaurants and reviews. Adding a review also updates the restaurant’s average rating.", "question": "What does Atomic mean in this ACID transaction?", "choices": ["The review add and rating update must both complete or neither should complete", "The review must use ASCII only", "The database must have no foreign keys", "The transaction must use a stack"], "answer": "The review add and rating update must both complete or neither should complete", "explanation": "Atomicity means a transaction is treated as a single indivisible unit. It cannot be partly completed.", "fact": "The other ACID terms are Consistency, Isolation and Durability."}, {"id": "q8_compilation", "section": "Q8", "title": "Q8 Data types and lexical analysis", "type": "mcq", "context": "A simple program calculates how many times a number goes into 100, then it is compiled.", "question": "What happens during lexical analysis?", "choices": ["Comments and whitespace are removed, identifiers are recorded and tokens are created", "Object code is executed by the CPU", "A PageRank score is calculated", "A binary search tree is balanced"], "answer": "Comments and whitespace are removed, identifiers are recorded and tokens are created", "explanation": "Lexical analysis processes source code into tokens and builds entries such as identifiers in a symbol table.", "fact": "Syntax analysis follows lexical analysis and checks the structure of the code against grammar rules."}, {"id": "q9_env_rice", "section": "Q9", "title": "Q9 RICE evaluation: environmental impacts of computers", "type": "drag", "context": "The paper asks about positive and negative impacts computers have on the environment.", "prompt": "Build a RICE-style balanced paragraph about environmental impact.", "lines": ["Risk: Manufacturing and disposing of computers can create pollution and [[l1]].", "Implication: Short device lifespans and e-waste can harm people and environments, especially where devices are [[l2]].", "Consequence: Computers can also reduce travel, support paperless working and improve [[l3]].", "Evaluation: The impact is mixed; benefits are strongest when devices are used efficiently and [[l4]]."], "answers": {"l1": "toxic waste", "l2": "dismantled unsafely", "l3": "energy management", "l4": "recycled responsibly"}, "tiles": ["toxic waste", "dismantled unsafely", "energy management", "recycled responsibly", "Run Length Encoding", "foreign key", "accumulator"], "explanation": "A strong response balances negatives such as e-waste and power use with positives such as reduced travel, reduced paper use and efficient control systems.", "fact": "Extended answers need both sides plus a clear judgement, not just a list of environmental problems."}, {"id": "q10_binary", "section": "Q10", "title": "Q10 Binary, hexadecimal and floating point", "type": "mcq", "context": "The paper includes conversions between binary, hexadecimal, denary, sign and magnitude and floating point.", "question": "What is 01011110 in hexadecimal?", "choices": ["5E", "94", "2F", "9B"], "answer": "5E", "explanation": "Split into nibbles: 0101 is 5 and 1110 is E, giving 5E.", "fact": "Hexadecimal is useful because each hex digit maps neatly to four binary bits."}, {"id": "q11_web_rice", "section": "Q11", "title": "Q11 RICE evaluation: web development technologies", "type": "drag", "context": "A web development company is recruiting a programmer to build websites.", "prompt": "Build a RICE-style paragraph explaining important web technologies.", "lines": ["Risk: A programmer who only knows one web technology may produce sites that lack structure, styling or [[l1]].", "Implication: HTML gives page structure, CSS controls presentation and JavaScript can add [[l2]].", "Consequence: Server-side code and databases are needed for dynamic websites that store and retrieve [[l3]].", "Evaluation: HTML, CSS and JavaScript are essential foundations, but broader technologies matter when sites need [[l4]]."], "answers": {"l1": "interactivity", "l2": "client-side validation", "l3": "data", "l4": "dynamic content"}, "tiles": ["interactivity", "client-side validation", "data", "dynamic content", "BIOS", "hash collision", "virtual memory"], "explanation": "This gives a balanced technology answer: core front-end technologies are essential, while server-side processing and databases become important for interactive, data-driven sites.", "fact": "HTML structures content, CSS styles it, and JavaScript adds client-side behaviour such as validation and interaction."}];
+const SUMMARY = [["Q1 Embedded systems and logic", "Virtual assistants, embedded operating systems, input/output devices, multicore processors and Boolean logic."], ["Q2 Compression", "Run Length Encoding and algorithms for finding the longest run of cars in a string."], ["Q3 LMC and registers", "Tracing LMC, interrupts, direct addressing and other addressing modes."], ["Q4 Storage and streaming", "Optical media, device drivers, streaming/downloaded films and compression for high-resolution video."], ["Q5 Hash tables vs linked lists", "Hash functions, collisions, linear probing/chaining, direct access and linked-list traversal."], ["Q6 Utilities and development", "Anti-virus software, Extreme Programming, virtual machines, scheduling and BIOS damage."], ["Q7 Databases", "Referential integrity, server-side validation, ACID transactions and Unicode vs ASCII."], ["Q8 Compilation", "Data types, program tracing, lexical analysis and syntax analysis."], ["Q9 Environmental impact", "E-waste, energy use, reduced travel, paperless working and responsible recycling."], ["Q10 Data representation", "Hexadecimal, denary, sign and magnitude, binary subtraction and floating point."], ["Q11 Web technologies", "HTML, CSS, JavaScript, server-side processing, databases and web-development practice."], ["RICE practice", "RICE = Risk, Implication, Consequence, Evaluation. Use it to structure balanced long-answer paragraphs."]];
+let currentSection='Q1'; let state={}; let mistakes={};
+const sections=[...new Set(QUESTIONS.map(q=>q.section))];
+
+const PDF_PATH = "pdfs/H44601_Computer_Systems_June_2019.pdf";
+const PDF_PAGE_MAP = {"Q1": {"question": 1, "answer": 25}, "Q2": {"question": 3, "answer": 27}, "Q3": {"question": 5, "answer": 29}, "Q4": {"question": 6, "answer": 30}, "Q5": {"question": 8, "answer": 32}, "Q6": {"question": 13, "answer": 36}, "Q7": {"question": 16, "answer": 38}, "Q8": {"question": 18, "answer": 40}, "Q9": {"question": 19, "answer": 41}, "Q10": {"question": 20, "answer": 43}, "Q11": {"question": 23, "answer": 45}};
+function pdfSrc(page){return 'pdf_pages/page_' + String(page).padStart(3,'0') + '.jpg';}
+function renderPdfFocusNav(){
+  const nav=document.getElementById('pdfFocusNav');
+  if(!nav) return;
+  nav.innerHTML='';
+  Object.keys(PDF_PAGE_MAP).forEach(section=>{
+    const b=el('button', section===currentSection?'active':'', section);
+    b.onclick=()=>{ currentSection=section; renderSectionNav(); renderQuestions(); setPdfFocus(section); };
+    nav.appendChild(b);
+  });
+}
+function setPdfFocus(section){
+  const info=PDF_PAGE_MAP[section] || PDF_PAGE_MAP[Object.keys(PDF_PAGE_MAP)[0]];
+  const q=document.getElementById('questionPdfFrame');
+  const a=document.getElementById('answerPdfFrame');
+  if(q) q.src=pdfSrc(info.question);
+  if(a) a.src=pdfSrc(info.answer);
+  const qt=document.getElementById('questionPdfTitle');
+  const at=document.getElementById('answerPdfTitle');
+  if(qt) qt.textContent='Question paper – '+section+' (page '+info.question+')';
+  if(at) at.textContent='Mark scheme – '+section+' answer (page '+info.answer+')';
+  renderPdfFocusNav();
+}
+function openPdfFocus(section){
+  currentSection=section;
+  document.querySelectorAll('.topBtn').forEach(b=>b.classList.remove('active'));
+  const pdfBtn=document.querySelector('.topBtn[data-view="pdf"]');
+  if(pdfBtn) pdfBtn.classList.add('active');
+  ['practice','summary','review','pdf'].forEach(v=>document.getElementById(v+'View').classList.add('hidden'));
+  document.getElementById('pdfView').classList.remove('hidden');
+  renderSectionNav(); renderQuestions(); setPdfFocus(section);
+}
+
+function el(tag,cls,text){const e=document.createElement(tag); if(cls)e.className=cls; if(text!==undefined)e.textContent=text; return e;}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function init(){renderSectionNav();renderQuestions();renderSummary();renderPdfFocusNav();setPdfFocus(currentSection);bindTop();updateScore();}
+function bindTop(){document.querySelectorAll('.topBtn').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.topBtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');['practice','summary','review','pdf'].forEach(v=>document.getElementById(v+'View').classList.add('hidden'));document.getElementById(btn.dataset.view+'View').classList.remove('hidden');if(btn.dataset.view==='review')renderReview(); if(btn.dataset.view==='pdf')setPdfFocus(currentSection);});}
+function renderSectionNav(){const nav=document.getElementById('sectionNav');nav.innerHTML='<strong>Exam question</strong>';sections.forEach(s=>{const b=el('button',s===currentSection?'active':'',s);b.onclick=()=>{currentSection=s;renderSectionNav();renderQuestions();setPdfFocus(s);};nav.appendChild(b);});}
+function renderQuestions(){const host=document.getElementById('questionHost');host.innerHTML='';QUESTIONS.filter(q=>q.section===currentSection).forEach(q=>host.appendChild(renderCard(q)));}
+function renderCard(q){const card=el('section','card');card.id=q.id;card.innerHTML=`<span class="badge">${q.section}</span><h2>${q.title}</h2><div class="context">${q.context}</div>`; if(q.type==='mcq') renderMCQ(card,q); else renderDrag(card,q); return card;}
+function renderMCQ(card,q){card.appendChild(el('p','',q.question));const choices=el('div','choices');const arr=state[q.id]?.order || shuffle(q.choices);state[q.id]={...(state[q.id]||{}),order:arr};arr.forEach(c=>{const div=el('div','choice',c); if(state[q.id].selected===c) div.classList.add('selected'); div.onclick=()=>{if(state[q.id].marked)return;state[q.id].selected=c;choices.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));div.classList.add('selected');};choices.appendChild(div);});card.appendChild(choices);const fb=el('div','feedback');const ctr=el('div','controls');const mark=el('button','check','Mark');mark.onclick=()=>{const selected=state[q.id].selected;if(!selected){alert('Choose an answer first.');return;}state[q.id].marked=true;const good=selected===q.answer;choices.querySelectorAll('.choice').forEach(ch=>{if(ch.textContent===q.answer)ch.classList.add('correct'); if(ch.textContent===selected && !good)ch.classList.add('incorrect');});fb.className='feedback show '+(good?'good':'bad');fb.innerHTML=(good?'Correct.':'Not quite.')+'<div class="explain">'+q.explanation+'</div><div class="fact">'+q.fact+'</div>'; if(!good)mistakes[q.id]={title:q.title,chosen:selected,answer:q.answer,explanation:q.explanation,fact:q.fact}; else delete mistakes[q.id];updateScore();};const reset=el('button','reset','Reset');reset.onclick=()=>{delete state[q.id];delete mistakes[q.id];renderQuestions();updateScore();};ctr.append(mark,reset);card.append(ctr,fb);}
+function renderDrag(card,q){const grid=el('div','questionGrid');const left=el('div');const work=el('div','work');work.innerHTML=q.lines.map(line=>line.replace(/\[\[(.*?)\]\]/g,(m,id)=>`<span class="blank" data-blank="${id}">${state[q.id]?.filled?.[id]||''}</span>`)).join('<br>');left.append(el('p','',q.prompt));left.append(work);const tiles=el('div','tiles');tiles.innerHTML='<h3>Answer tiles</h3><p style="font-size:13px;color:#667085;margin-top:0">Drag a tile or tap a tile then tap a blank.</p>';let selectedTile=null;const tileOrder=state[q.id]?.tileOrder||shuffle(q.tiles);state[q.id]={...(state[q.id]||{}),tileOrder};tileOrder.forEach(t=>{const tile=el('button','tile',t);tile.draggable=true;tile.ondragstart=e=>e.dataTransfer.setData('text/plain',t);tile.onclick=()=>{selectedTile=t;tiles.querySelectorAll('.tile').forEach(x=>x.classList.remove('active'));tile.classList.add('active');};tiles.appendChild(tile);});grid.append(left,tiles);card.appendChild(grid);work.querySelectorAll('.blank').forEach(blank=>{blank.ondragover=e=>e.preventDefault();blank.ondrop=e=>{e.preventDefault();fillBlank(q,blank,e.dataTransfer.getData('text/plain'));};blank.onclick=()=>{if(selectedTile)fillBlank(q,blank,selectedTile);};});const fb=el('div','feedback');const ctr=el('div','controls');const mark=el('button','check','Mark');mark.onclick=()=>{const filled=state[q.id]?.filled||{};let all=true;Object.entries(q.answers).forEach(([id,ans])=>{if(filled[id]!==ans)all=false;});fb.className='feedback show '+(all?'good':'bad');fb.innerHTML=(all?'Correct.':'Check the highlighted blanks and compare with the worked explanation.')+'<div class="explain">'+q.explanation+'</div><div class="fact">'+q.fact+'</div>'; if(!all){mistakes[q.id]={title:q.title,chosen:Object.entries(filled).map(([k,v])=>k+': '+v).join('; ')||'No answer',answer:Object.entries(q.answers).map(([k,v])=>k+': '+v).join('; '),explanation:q.explanation,fact:q.fact};} else delete mistakes[q.id];state[q.id]={...(state[q.id]||{}),marked:true,correct:all};updateScore();};const reset=el('button','reset','Reset');reset.onclick=()=>{delete state[q.id];delete mistakes[q.id];renderQuestions();updateScore();};ctr.append(mark,reset);card.append(ctr,fb);}
+function fillBlank(q,blank,value){state[q.id]=state[q.id]||{};state[q.id].filled=state[q.id].filled||{};state[q.id].filled[blank.dataset.blank]=value;blank.textContent=value;blank.classList.add('filled');}
+function updateScore(){let attempted=0,correct=0;QUESTIONS.forEach(q=>{if(state[q.id]?.marked){attempted++; if(q.type==='mcq'&&state[q.id].selected===q.answer)correct++; if(q.type==='drag'&&state[q.id].correct)correct++;}});document.getElementById('scoreBadge').textContent=`Score: ${correct} / ${attempted}`;}
+function renderSummary(){const host=document.getElementById('summaryGrid');host.innerHTML='';SUMMARY.forEach(([h,t])=>{const c=el('div','card');c.style.margin='0';c.innerHTML=`<h2>${h}</h2><p>${t}</p>`;host.appendChild(c);});}
+function renderReview(){const list=document.getElementById('reviewList');const vals=Object.values(mistakes);if(!vals.length){list.innerHTML='<p class="score">No mistakes recorded yet.</p>';return;}list.innerHTML='';vals.forEach(m=>{const d=el('div','reviewItem');d.innerHTML=`<h3>${m.title}</h3><p><strong>Your answer:</strong> ${m.chosen}</p><p><strong>Correct answer:</strong> ${m.answer}</p><div class="explain">${m.explanation}</div><div class="fact">${m.fact}</div>`;list.appendChild(d);});}
+init();
+</script>
+<script id="rice-paragraph-extension">
+(function(){
+  const RICE_TASKS = [{"id": "rice_2019_q5_hash_linked", "section": "Q5", "title": "Q5(e) RICE paragraph: hash table vs linked list", "type": "drag", "context": "The firewall must check several website addresses each second and add about ten new addresses per day. Build one strong RICE paragraph by matching each part to the correct role.", "prompt": "Drag each sentence into the correct RICE position.", "lines": ["Risk: [[risk]]", "Implication: [[implication]]", "Consequence: [[consequence]]", "Evaluation: [[evaluation]]"], "answers": {"risk": "A linked list may become slower to search as the whitelist grows.", "implication": "The firewall may have to follow many pointers before finding whether a website is allowed.", "consequence": "During busy periods, checking addresses could become too slow for effective filtering.", "evaluation": "A hash table is the better choice if the hash function has few collisions because lookup is much faster."}, "tiles": ["A linked list may become slower to search as the whitelist grows.", "The firewall may have to follow many pointers before finding whether a website is allowed.", "During busy periods, checking addresses could become too slow for effective filtering.", "A hash table is the better choice if the hash function has few collisions because lookup is much faster.", "A queue can only store images.", "RLE is an encryption algorithm."], "explanation": "RICE helps structure evaluation: identify a Risk or issue, explain the Implication, develop the Consequence, then make an Evaluation or judgement linked to the scenario.", "fact": "Exam tip: the Evaluation should not simply repeat the risk. It should weigh up the issue and make a justified judgement."}, {"id": "rice_2019_q9_environment", "section": "Q9", "title": "Q9 RICE paragraph: environmental impact", "type": "drag", "context": "The paper asks about positive and negative impacts of computers on the environment. Build one strong RICE paragraph by matching each part to the correct role.", "prompt": "Drag each sentence into the correct RICE position.", "lines": ["Risk: [[risk]]", "Implication: [[implication]]", "Consequence: [[consequence]]", "Evaluation: [[evaluation]]"], "answers": {"risk": "Computers require energy, raw materials and disposal, which can create pollution and electronic waste.", "implication": "Short device lifespans and toxic materials can increase landfill and harm people who dismantle waste.", "consequence": "The environmental cost may rise as more devices are manufactured, powered and replaced.", "evaluation": "Computers can still reduce travel, paper use and energy waste, so the overall impact depends on responsible use and recycling."}, "tiles": ["Computers require energy, raw materials and disposal, which can create pollution and electronic waste.", "Short device lifespans and toxic materials can increase landfill and harm people who dismantle waste.", "The environmental cost may rise as more devices are manufactured, powered and replaced.", "Computers can still reduce travel, paper use and energy waste, so the overall impact depends on responsible use and recycling.", "A BIOS is a search engine crawler.", "A hash collision means no data is stored."], "explanation": "RICE helps structure evaluation: identify a Risk or issue, explain the Implication, develop the Consequence, then make an Evaluation or judgement linked to the scenario.", "fact": "Exam tip: the Evaluation should not simply repeat the risk. It should weigh up the issue and make a justified judgement."}, {"id": "rice_2019_q11_webtech", "section": "Q11", "title": "Q11(a) RICE paragraph: web technologies", "type": "drag", "context": "A company is recruiting a programmer to build websites. Build one strong RICE paragraph by matching each part to the correct role.", "prompt": "Drag each sentence into the correct RICE position.", "lines": ["Risk: [[risk]]", "Implication: [[implication]]", "Consequence: [[consequence]]", "Evaluation: [[evaluation]]"], "answers": {"risk": "A programmer who only knows HTML may be unable to build modern interactive or data-driven websites.", "implication": "The company may produce static pages that do not validate forms, store data or respond to users effectively.", "consequence": "Clients could receive websites that look basic, work poorly or need expensive rework.", "evaluation": "HTML, CSS and JavaScript are essential, with server-side scripting, databases and image editing important for more advanced sites."}, "tiles": ["A programmer who only knows HTML may be unable to build modern interactive or data-driven websites.", "The company may produce static pages that do not validate forms, store data or respond to users effectively.", "Clients could receive websites that look basic, work poorly or need expensive rework.", "HTML, CSS and JavaScript are essential, with server-side scripting, databases and image editing important for more advanced sites.", "A mantissa is used to style a heading.", "A device driver calculates PageRank."], "explanation": "RICE helps structure evaluation: identify a Risk or issue, explain the Implication, develop the Consequence, then make an Evaluation or judgement linked to the scenario.", "fact": "Exam tip: the Evaluation should not simply repeat the risk. It should weigh up the issue and make a justified judgement."}];
+  const RICE_SUMMARY = [["RICE paragraph builders", "Use the new Q5, Q9 and Q11 paragraph builders to practise hash tables, environment and web-technology evaluation."]];
+  RICE_TASKS.forEach(function(q){ if(!QUESTIONS.some(function(existing){return existing.id === q.id;})){ QUESTIONS.push(q); } });
+  RICE_SUMMARY.forEach(function(item){ if(!SUMMARY.some(function(existing){return existing[0] === item[0];})){ SUMMARY.push(item); } });
+  if (typeof renderSectionNav === 'function') renderSectionNav();
+  if (typeof renderQuestions === 'function') renderQuestions();
+  if (typeof renderSummary === 'function') renderSummary();
+  if (typeof updateScore === 'function') updateScore();
+})();
+</script>
+
+<script id="coding-drag-extension">
+(function(){
+  const CODING_TASKS = [{"id": "code_2019_q2_longest", "section": "Q2", "title": "Q2(d) Code builder: longest run of cars", "type": "drag", "context": "Motorway survey context: the string contains vehicle letters. C means car. The function longest(sequence) must return the length of the longest continuous run of C characters, not the longest run of any letter.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["function longest(sequence)", "  currentRun = 0", "  biggestRun = 0", "  for i = 0 to sequence.length - 1", "    if sequence.substring(i,1) == [[a]] then", "      currentRun = [[b]]", "    else", "      if currentRun > biggestRun then biggestRun = [[c]]", "      currentRun = 0", "    endif", "  next i", "  return [[d]]", "endfunction"], "answers": {"a": "\"C\"", "b": "currentRun + 1", "c": "currentRun", "d": "biggestRun"}, "tiles": ["\"C\"", "currentRun + 1", "currentRun", "biggestRun", "\"M\"", "return currentRun"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "The algorithm must track C runs only, not the longest run of any character."}, {"id": "code_2019_q5_hash", "section": "Q5", "title": "Q5(c) Code builder: website hash function", "type": "drag", "context": "Firewall hash function context: for a site such as www.ocr.org.uk, remove www., keep the main domain part (ocr), convert it to uppercase, then add the ASCII values of each character.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["firstDot = locate(siteName, \".\")", "siteName = siteName.substring([[a]])", "secondDot = locate(siteName, \".\")", "siteName = siteName.substring([[b]])", "siteName = [[c]](siteName)", "total = 0", "for i = 0 to siteName.length - 1", "  total = total + [[d]](siteName.substring(i,1))", "next i", "return total"], "answers": {"a": "firstDot + 1", "b": "0, secondDot", "c": "upper", "d": "asc"}, "tiles": ["firstDot + 1", "0, secondDot", "upper", "asc", "lower", "PageRank"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "Use the supplied locate(), upper() and asc() functions rather than inventing unrelated functions."}, {"id": "code_2019_q8_remainder", "section": "Q8", "title": "Q8(e) Code builder: display the remainder", "type": "drag", "context": "Program context: num is entered by the user and count already stores how many whole times num goes into 100. Add code to calculate and display the remainder.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["remainder = [[a]] [[b]] [[c]]", "print([[d]])"], "answers": {"a": "100", "b": "MOD", "c": "num", "d": "remainder"}, "tiles": ["100", "MOD", "num", "remainder", "DIV", "count"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "The simplest answer is to use MOD: 100 MOD num gives the remainder."}, {"id": "code_2019_q11_css", "section": "Q11", "title": "Q11(c) Code builder: CSS class selector", "type": "drag", "context": "CSS context: the HTML contains <div class=\"offer\">. Write a selector for the offer class and set the border colour to orange while keeping the existing solid border style.", "prompt": "Use the scenario above, then drag the missing code fragments into the correct gaps.", "lines": ["[[a]] {", "  border-style: [[b]];", "  [[c]]: [[d]];", "}"], "answers": {"a": ".offer", "b": "solid", "c": "border-color", "d": "orange"}, "tiles": [".offer", "solid", "border-color", "orange", "href", "<div>"], "explanation": "This is a code-builder task: use the scenario first, then place the syntax pieces in the correct order. The aim is not just to remember code, but to link each line to the problem being solved.", "fact": "A dot selects a class in CSS, so .offer targets elements with class=\"offer\"."}];
+  const CODING_SUMMARY = [["Coding drag-and-drop builders", "Coding-style exam questions now have scenario-based drag-and-drop practice tasks for pseudocode, SQL, HTML/CSS, LMC and class definitions where relevant."]];
+  CODING_TASKS.forEach(function(q){ if(!QUESTIONS.some(function(existing){return existing.id === q.id;})){ QUESTIONS.push(q); } });
+  CODING_SUMMARY.forEach(function(item){ if(!SUMMARY.some(function(existing){return existing[0] === item[0];})){ SUMMARY.push(item); } });
+  if (typeof renderSectionNav === 'function') renderSectionNav();
+  if (typeof renderQuestions === 'function') renderQuestions();
+  if (typeof renderSummary === 'function') renderSummary();
+  if (typeof updateScore === 'function') updateScore();
+})();
+</script>
+
+
+<script id="teacher-submit-extension">
+(function(){
+  const PAPER_LABEL = "June 2019";
+  if(!document.getElementById('teacher-submit-style')){
+    const style = document.createElement('style');
+    style.id = 'teacher-submit-style';
+    style.textContent = `
+      .side{display:flex;flex-direction:column;max-height:calc(100vh - 104px);overflow-y:auto;padding-bottom:12px}
+      .submitPanel{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;background:#fff;position:sticky;bottom:0;z-index:5}
+      .submitPanel .copyResultsBtn{width:100%;border:0;border-radius:12px;background:var(--green);color:white;padding:11px 12px;font-weight:800;cursor:pointer;text-align:center;box-shadow:0 -2px 8px rgba(15,23,42,.04)}
+      .submitPanel .submitHelp{font-size:11px;color:var(--muted);margin-top:7px;line-height:1.35}
+      .submitPanel .submitError{display:none;margin-top:8px;padding:8px;border-radius:10px;background:#fff1f1;border:1px solid #ffc9c9;color:#9f1239;font-size:12px}
+      .resultsModalOverlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:9999;display:none;align-items:center;justify-content:center;padding:18px}
+      .resultsModal{width:min(860px,96vw);max-height:92vh;background:#fff;border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.28);padding:18px;display:flex;flex-direction:column;gap:10px}
+      .resultsModal h2{margin:0;font-size:20px;color:var(--ink)}
+      .resultsModal p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+      .resultsModal textarea{width:100%;min-height:390px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px;line-height:1.45;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;white-space:pre-wrap}
+      .resultsModalActions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+      .resultsModalActions button{border:0;border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer}
+      .resultsModalActions .primary{background:var(--green);color:#fff}
+      .resultsModalActions .secondary{background:#eef2f6;color:#344054}
+      .resultsModal .copyStatus{display:none;padding:8px;border-radius:10px;background:#ecfdf3;border:1px solid #abefc6;color:#067647;font-size:12px;line-height:1.35}
+      @media(max-width:900px){.side{display:block;max-height:none;overflow:visible}.submitPanel{position:static;margin-top:12px}}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function getScoreSummary(){
+    let attempted=0, correct=0;
+    const rows=[];
+    const questionList = (typeof QUESTIONS !== 'undefined') ? QUESTIONS : (window.QUESTIONS || []);
+    const answerState = (typeof state !== 'undefined') ? state : (window.state || {});
+    questionList.forEach(q=>{
+      const s=answerState[q.id];
+      if(s && s.marked){
+        attempted++;
+        let ok=false;
+        let chosen='';
+        let answer='';
+        if(q.type==='mcq'){
+          ok=s.selected===q.answer;
+          chosen=s.selected || 'No answer';
+          answer=q.answer || '';
+        }else if(q.type==='drag'){
+          ok=!!s.correct;
+          const filled=s.filled||{};
+          chosen=Object.entries(filled).map(([k,v])=>`${k}: ${v}`).join('; ') || 'No answer';
+          answer=Object.entries(q.answers||{}).map(([k,v])=>`${k}: ${v}`).join('; ');
+        }
+        if(ok) correct++;
+        rows.push(`${ok ? '✓' : '✗'} ${q.section || ''} - ${q.title}\nStudent answer: ${chosen}\nCorrect answer: ${answer}`);
+      }
+    });
+    return {attempted, correct, rows};
+  }
+
+  function buildResultsText(score){
+    const percent = score.attempted ? Math.round((score.correct / score.attempted) * 100) : 0;
+    return [
+      'H446/01 practice results',
+      `Paper: ${PAPER_LABEL}`,
+      `Score: ${score.correct} / ${score.attempted} (${percent}%)`,
+      `Generated: ${new Date().toLocaleString('en-GB')}`,
+      '',
+      'Marked question detail:',
+      score.rows.join('\n\n')
+    ].join('\n');
+  }
+
+  function showError(msg){
+    const err=document.getElementById('submitError');
+    if(err){err.textContent=msg;err.style.display='block';}
+  }
+  function clearError(){
+    const err=document.getElementById('submitError');
+    if(err){err.textContent='';err.style.display='none';}
+  }
+
+  function ensureResultsModal(){
+    let overlay=document.getElementById('resultsModalOverlay');
+    if(overlay) return overlay;
+    overlay=document.createElement('div');
+    overlay.className='resultsModalOverlay';
+    overlay.id='resultsModalOverlay';
+    overlay.innerHTML=`
+      <div class="resultsModal" role="dialog" aria-modal="true" aria-labelledby="resultsModalTitle">
+        <h2 id="resultsModalTitle">Submit results</h2>
+        <p>The results are selected below. Copy them, then paste into an email to your teacher.</p>
+        <textarea id="resultsCopyText" readonly aria-label="Results to copy"></textarea>
+        <div class="copyStatus" id="modalCopyStatus">Copied. Paste this into your email.</div>
+        <div class="resultsModalActions">
+          <button class="secondary" type="button" onclick="closeResultsPopup()">Close</button>
+          <button class="primary" type="button" onclick="copyResultsTextFromPopup()">Copy text</button>
+        </div>
+      </div>
+    `;
+    overlay.addEventListener('click', function(e){ if(e.target===overlay) closeResultsPopup(); });
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  window.closeResultsPopup=function(){
+    const overlay=document.getElementById('resultsModalOverlay');
+    if(overlay) overlay.style.display='none';
+  };
+
+  window.copyResultsTextFromPopup=async function(){
+    const ta=document.getElementById('resultsCopyText');
+    const status=document.getElementById('modalCopyStatus');
+    if(!ta) return;
+    ta.focus();
+    ta.select();
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(ta.value);
+      }else{
+        document.execCommand('copy');
+      }
+      if(status){status.textContent='Copied. Paste this into your email.';status.style.display='block';}
+    }catch(e){
+      if(status){status.textContent='If copying was blocked, press Ctrl+C or Cmd+C now.';status.style.display='block';}
+    }
+  };
+
+  window.showCopyResultsPopup = async function(){
+    clearError();
+    const score=getScoreSummary();
+    if(score.attempted===0){ showError('Mark at least one question before submitting.'); return; }
+    const text=buildResultsText(score);
+    const overlay=ensureResultsModal();
+    const ta=document.getElementById('resultsCopyText');
+    const status=document.getElementById('modalCopyStatus');
+    if(status) status.style.display='none';
+    if(ta){
+      ta.value=text;
+      overlay.style.display='flex';
+      setTimeout(()=>{ ta.focus(); ta.select(); }, 50);
+    }
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(text);
+        if(status){status.textContent='Copied. Paste this into your email.';status.style.display='block';}
+      }
+    }catch(e){
+      // Popup remains visible for manual copy.
+    }
+  };
+
+  function addSubmitPanel(){
+    const nav=document.getElementById('sectionNav');
+    if(!nav || document.getElementById('submitPanel')) return;
+    const panel=document.createElement('div');
+    panel.className='submitPanel';
+    panel.id='submitPanel';
+    panel.innerHTML=`
+      <button class="copyResultsBtn" type="button" onclick="showCopyResultsPopup()">Submit</button>
+      <div class="submitHelp">Mark questions first. Then copy the pop-up text into your email.</div>
+      <div class="submitError" id="submitError"></div>
+    `;
+    nav.appendChild(panel);
+  }
+
+  const originalRender = window.renderSectionNav;
+  if(typeof originalRender === 'function' && !originalRender.__copyResultsWrapped){
+    const wrapped=function(){ originalRender.apply(this, arguments); addSubmitPanel(); };
+    wrapped.__copyResultsWrapped=true;
+    window.renderSectionNav=wrapped;
+  }
+  addSubmitPanel();
+})();
+</script>
+
+</body></html>
